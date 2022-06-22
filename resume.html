@@ -1,0 +1,1147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <style>
+        /* audio */
+        .u-audio{position:absolute;left:90%;top:20%;width:30px;height:30px;background:url("images/music_no.png") right 0 no-repeat; -webkit-background-size: 30px 30px;background-size: 30px 30px;z-index:998;}
+        .u-play{
+            background-image: url("images/music_off.png");
+            -webkit-animation:reverseRotataZ 1.2s linear infinite;
+            animation:reverseRotataZ 1.2s linear infinite;
+        }
+        /* reverseRotataZ */
+        @-webkit-keyframes reverseRotataZ{
+            0%{-webkit-transform:rotateZ(0deg);}
+            100%{-webkit-transform:rotateZ(-360deg);}
+        }
+        @keyframes reverseRotataZ{
+            0%{transform:rotateZ(0deg);}
+            100%{transform:rotateZ(-360deg);}
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XiaoGu - Personal Web</title>
+    <!--Usefull Meta-->
+    <meta name="description" content="A slick, customizable CV, Resume or Portfolio template, perfect for photographers, freelancers or designers.">
+    <meta name="keywords" content="angus, resume, cv, vCard, portfolio, html template, template, responsive">
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_16x16.png">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <!--AOS Animation Stylesheet-->
+    <link rel="stylesheet" href="css/aos.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--Magnific Popup-->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!--OWL Carousel-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!--OWL Carousel Theme-->
+    <link rel="stylesheet" href="css/owl_theme.css">
+    <!--Keyden Styelsheet with Bootstrap 5-->
+    <link rel="stylesheet" href="css/kayden_1.css">
+
+</head>
+<body>
+<div class="u-audio">
+    <audio id="yy" autoplay preload src="music/willow.mp3" loop></audio>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    var willow=document.getElementById("yy");
+    function autoPlayAudio() {
+        wx.config({
+            debug: false
+        });
+        wx.ready(function() {
+            willow.play();
+        });
+    }
+    $(".u-audio").click(function(){
+        if($(this).attr("class")=="u-audio"){
+            willow.play();
+            $(".u-audio").addClass("u-play");
+        }else if($(this).attr("class")=="u-audio u-play"){
+            willow.pause();
+            $(".u-audio").removeClass("u-play");
+        }
+    });
+    $(".u-audio").trigger("click");
+    autoPlayAudio();
+</script>
+</body>
+<body data-offset="102">
+     <!--PRELOADER START-->
+
+     <div id="preloader">
+        <div class="text-center w-100">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <!--PRELOADER END-->
+    <!--Header START-->
+    <header class="kayden-header sticky-top">
+        <div class="header-inside transparent_header">
+            <div class="d-flex flex-row justify-content-between align-items-center">
+                <!--Header Toggler START-->
+                <div class="kayden-menu-toggler">
+                    <a class="kayden-toggler text-reset" data-bs-toggle="offcanvas" href="#kaydenOffCanvas" role="button" aria-controls="kaydenOffCanvas">
+                        <div class="kt-r">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="kt-t">
+                            菜单栏
+                        </div>
+                    </a>
+                </div>
+                <!--Header Toggler END-->
+                <!--Header Logo START-->
+                <div class="kayden-logo">
+                    <a href="#">
+                        <img src="images/1.png" height="50" alt="kayden">
+                    </a>
+                </div>
+                <!--Header Logo END-->
+                <!--Header Info START-->
+                <div class="kayden-nav-meta fs-5 fw-bold d-none d-sm-block text-end">
+                    <a href="#" class="text-reset">+86 13676860581</a>
+                </div>
+                <!--Header Info END-->
+            </div>
+        </div>
+    </header>
+    <!--Header END-->
+    <!--Off Canvas START-->
+    <div class="offcanvas offcanvas-start" id="kaydenOffCanvas">
+        <!--Off Canvas Header START-->
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!--Off Canvas Header END-->
+        <!--Off Canvas Body START-->
+        <div class="offcanvas-body">
+            <div class="kayden-offcanvas-nav-container d-flex flex-column justify-content-center align-items-center">
+                    <!--Off Canvas Navigation START-->
+                    <ul class="kayden-offcanvas-nav list-inline">
+                        <li class="py-3">
+                            <a href="#home" class="kayden_scrollspy underline_animation underline_text text-reset fs-4 fw-bold" data-bs-dismiss="offcanvas">主页</a>
+                        </li>
+                        <li class="py-3">
+                            <a href="#about" class="kayden_scrollspy underline_animation underline_text text-reset fs-4 fw-bold" data-bs-dismiss="offcanvas">简介</a>
+                        </li>
+                        <li class="py-3">
+                            <a href="#portfolio" class="kayden_scrollspy underline_animation underline_text text-reset fs-4 fw-bold" data-bs-dismiss="offcanvas">经历</a>
+                        </li>
+                        <li class="py-3">
+                            <a href="#faq" class="kayden_scrollspy underline_animation underline_text text-reset fs-4 fw-bold" data-bs-dismiss="offcanvas">FAQ</a>
+                        </li>
+                        <li class="py-3">
+                            <a href="#contact" class="kayden_scrollspy underline_animation underline_text text-reset fs-4 fw-bold" data-bs-dismiss="offcanvas">Contact</a>
+                        </li>
+                    </ul>
+                    <!--Off Canvas Navigation END-->
+            </div>
+        </div>
+        <!--Off Canvas Body END-->
+    </div>
+    <!--Off Canvas END-->
+    <!--Home Section START-->
+    <section id="home" class="home vh-100">
+        <!--Home Background START-->
+        <div class="home-background position-absolute top-0 start-0 w-100 h-100">
+            <img src="images/background.jpg" data-aos="fade-up" data-aos-duration="1000" alt="home" class="w-100 h-100 fit-cover fit-left-top">
+        </div>
+        <!--Home Background END-->
+        <!--Home Container START-->
+        <div class="container h-100 position-relative">
+            <div class="home-details text-center text-sm-end w-100 h-100 d-flex align-items-center">
+                <div class="home-details-inner w-100">
+                    <p class="welcome_text fs-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500"><span class="typed_text" data-options="小顾的主页, Welcome to XiaoGu‘s Resume"></span></p>
+                    <h1 class="fs-1 fw-bold  kayden-underline-center kayden-underline-sm-right kayden-underline-big d-inline-block" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">I'm XiaoGu</h1>
+                </div>
+            </div>
+        </div>
+        <!--Home Container END-->
+        <!--Scroll Down START-->
+        <div class="scroll-down">
+            <a href="#about" class="kayden_scrollspy scroll-down-link text-center">
+                <div class="scroll-title">Scroll Down</div>
+                <div class="scroll-mouse">
+                    <div class="whell"></div>
+                </div>
+            </a>
+        </div>
+        <!--Scroll Down END-->
+    </section>
+    <!--Home Section END-->
+    <!--About Section START-->
+    <section id="about" class="min-vh-100">
+        <div class="container h-100">
+            <div class="about_inside w-100 h-100 d-flex justify-content-center align-items-center">
+                <div class="row w-100">
+                    <!--About Section Picture START-->
+                    <div class="offset-md-1 col-md-4">
+                        <div class="about-image w-100">
+                            <img src="images/person.jpg" class="kayden-shadow rounded-3 w-100" alt="kayden Picture" data-aos="zoom-in" data-aos-duration="800">
+                        </div>
+                    </div>
+                    <!--About Section Picture END-->
+                    <!--About Section Details START-->
+                    <div class="offset-md-1 col-md-6 mt-5 mt-md-0">
+                        <div class="h-100 d-flex align-items-center justify-content-center">
+                            <div class="about-details">
+                                <h2 class="fs-3 fw-bold mb-5">I'm XiaoGu</h2>
+                                <p class="fs-3-1 fw-bold mb-5" style="text-indent: 8em">来自计算机科学与技术专业</p>
+                                <p class="text-secondary2 mb-5" style="text-indent: 2em">两次国家励志奖学金获得者，校三好学生标兵，获得”博创杯“全国大学生嵌入式人工智能设计大赛二等奖，2021年蓝桥杯省级二等奖，2022年蓝桥杯省级一等奖，2021年作为负责人主持省级大学生创新训练项目一项（已于2021年3月结项），并于2022年主持国家级大学生创新训练项目一项（预计2023年3月结项）。本人在上一学年努力学习、积极进取，加权平均分在专业第三，大二更是以综合测评99.49位于专业第二。
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积极参与科创，获得国家级奖项三项，省级奖项十余项，并以第三作者身份在《Remote Sensing》期刊上发表SCI论文一篇，并参与外观设计和实用新型专利各一项。
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;热爱美好生活，积极参加各种学校组织的公益活动，大学三年期间担任班级宣传委员兼寝室长，不断的在学习上和生活上积极进取，争取创造出自己美好的明日。
+                                </p>
+                                <!--Social Links START-->
+<!--                                <ul class="social-links list-inline mb-5">-->
+<!--                                    <div align="center">-->
+<!--                                    <li class="list-inline-item">-->
+<!--                                        <a href="https:facebook.com/" title="facebook">-->
+<!--                                            <i class="fab fa-facebook-f"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li class="list-inline-item">-->
+<!--                                        <a href="http://www.weixin.com/" title="linkedin">-->
+<!--                                            <i class="fab fa-weixin"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li class="list-inline-item">-->
+<!--                                        <a href="https://instagram.com/" title="pinterest">-->
+<!--                                            <i class="fab fa-instagram"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li class="list-inline-item">-->
+<!--                                        <a href="https://github.com/" title="git">-->
+<!--                                            <i class="fab fa-github"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    </div>-->
+<!--                                </ul>-->
+                                <!--Social Links END-->
+<!--                                <a href="#" download class="btn btn-outline-primary" title="Download CV">Download CV</a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--About Section Details END-->
+                </div>  
+            </div>
+        </div>
+    </section>
+    <!--About Section END-->
+    <!--Services Section START-->
+    <section id="services">
+        <div class="container">
+            <!--Section Heading START-->
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-5 fw-bold text-uppercase d-inline-block">生活</h2>
+            </div>
+            <!--Section Heading END-->
+            <!--Section Body START-->
+            <div class="section-body">
+                <!--Gradient Grid START-->
+                <div class="kayden-gradient-grid">
+                    <!--Gradient Grid ROW START-->
+                    <div class="row g-0">
+                        <!--Gradient Grid Item START-->
+                        <div class="col-lg-4 text-center">
+                            <div class="p-5">
+                                <div class="fs-2 mb-3">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h4 class="mb-3">创新发展</h4>
+                                <p class="text-secondary">我会经常的上网进行查阅资料丰富自己的学习，不断的开阔自己的眼界，不断的进步</p>
+                            </div>
+                        </div>
+                        <!--Gradient Grid Item END-->
+                        <!--Gradient Grid Item START-->
+                        <div class="col-lg-4 text-center">
+                            <div class="p-5">
+                                <div class="fs-2 mb-3">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4 class="mb-3">积极乐观</h4>
+                                <p class="text-secondary">可以很好的处理的同学之间的关系，并且在人际交往中可以很好的展现自己，对待生活积极乐观</p>
+                            </div>
+                        </div>
+                        <!--Gradient Grid Item END-->
+                        <!--Gradient Grid Item START-->
+                        <div class="col-lg-4 text-center">
+                            <div class="p-5">
+                                <div class="fs-2 mb-3">
+                                    <i class="fas fa-mug-hot"></i>
+                                </div>
+                                <h4 class="mb-3">休闲娱乐</h4>
+                                <p class="text-secondary">平时喜欢打篮球和羽毛球，并且时常会去看电影，有时候会在寝室打打游戏不断的丰富自己的业余生活</p>
+                            </div>
+                        </div>
+                        <!--Gradient Grid Item END-->
+                    </div>
+                    <!--Gradient Grid ROW END-->
+                    <!--Gradient Grid ROW START-->
+                    <div class="row g-0">
+                        <!--Gradient Grid Item START-->
+                        <div class="col-lg-4 text-center">
+                            <div class="p-5">
+                                <div class="fs-2 mb-3">
+                                    <i class="far fa-clone"></i>
+                                </div>
+                                <h4 class="mb-3">待人友善</h4>
+                                <p class="text-secondary">时常会去帮助别人解决一些生活上的事情，并且和好朋友共同学医，一起解决困难</p>
+                            </div>
+                        </div>
+                        <!--Gradient Grid Item END-->
+                        <!--Gradient Grid Item START-->
+                        <div class="col-lg-4 text-center">
+                            <div class="p-5">
+                                <div class="fs-2 mb-3">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                                <h4 class="mb-3">热爱旅游</h4>
+                                <p class="text-secondary">我非常喜欢去旅游的时候，欣赏一些大自然的美丽景物，不断的丰富自己的眼界</p>
+                            </div>
+                        </div>
+                        <!--Gradient Grid Item END-->
+                        <!--Gradient Grid Item START-->
+                        <div class="col-lg-4 text-center">
+                            <div class="p-5">
+                                <div class="fs-2 mb-3">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h4 class="mb-3">追求刺激</h4>
+                                <p class="text-secondary">喜欢玩蹦极、过山车、速降等一些刺激的游戏，这会使我的肾上腺素急速飙升</p>
+                            </div>
+                        </div>
+                        <!--Gradient Grid Item END-->
+                    </div>
+                    <!--Gradient Grid ROW END-->
+                </div>
+                <!--Gradient Grid END-->
+            </div>
+            <!--Section Body END-->
+        </div>
+    </section>
+    <!--Services Section END-->
+    <!--Facts Section START-->
+    <section id="facts">
+        <!--Section Body START-->
+        <div class="section-body">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-md-6">
+                        <div class="row gx-3 gy-5">
+                            <div class="col-6">
+                                <!--Facts Item START-->
+                                <div class="fact d-flex flex-column align-items-center align-items-md-start">
+                                    <h3 class="fs-2 d-inline-block"><span class="tmcounter" data-from="0" data-to="25" data-speed="1500">0</span><sup>+</sup></h3>
+                                    <p class="fs-4 d-inline-block text-center text-md-left">学习天数</p>
+                                </div>
+                                <!--Facts Item END-->
+                            </div>
+                            <div class="col-6">
+                                <!--Facts Item START-->
+                                <div class="fact d-flex flex-column align-items-center align-items-md-start">
+                                    <h3 class="fs-2 d-inline-block" ><span class="tmcounter" data-from="0" data-to="20" data-speed="1500">0</span><sup>+</sup></h3>
+                                    <p class="fs-4 d-inline-block text-center text-md-left">粉丝</p>
+                                </div>
+                                <!--Facts Item END-->
+                            </div>
+                            <div class="col-6">
+                                <!--Facts Item START-->
+                                <div class="fact d-flex flex-column align-items-center align-items-md-start">
+                                    <h3 class="fs-2 d-inline-block" ><span class="tmcounter" data-from="0" data-to="30" data-speed="1500">0</span><sup>+</sup></h3>
+                                    <p class="fs-4 d-inline-block text-center text-md-left">所获奖项</p>
+                                </div>
+                                <!--Facts Item END-->
+                            </div>
+                            <div class="col-6">
+                                <!--Facts Item START-->
+                                <div class="fact d-flex flex-column align-items-center align-items-md-start">
+                                    <h3 class="fs-2 d-inline-block"><span class="tmcounter" data-from="0" data-to="3" data-speed="1500">0</span></h3>
+                                    <p class="fs-4 d-inline-block text-center text-md-left">完成的项目</p>
+                                </div>
+                                <!--Facts Item END-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="fs-3 mb-5 fw-bold">我的技能</h2>
+                        <div class="skills_container">
+                            <!--Progress Bar START-->
+                            <div class="mb-4">
+                                <label class="mb-3 fs-6">HTML 75%</label>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-loadAnimation" data-percent="55" style="width: 0%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <!--Progress Bar END-->
+                            <!--Progress Bar START-->
+                            <div class="mb-4">
+                                <label class="mb-3 fs-6">C++ 85%</label>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-loadAnimation" data-percent="85" style="width: 0%;" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <!--Progress Bar END-->
+                            <!--Progress Bar START-->
+                            <div class="mb-4">
+                                <label class="mb-3 fs-6">Java 70%</label>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-loadAnimation" data-percent="70" style="width: 0%;" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <!--Progress Bar END-->
+                            <!--Progress Bar START-->
+                            <div class="mb-4">
+                                <label class="mb-3 fs-6">Python 90%</label>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-loadAnimation" data-percent="95" style="width: 0%;" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <!--Progress Bar END-->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Section Body END-->
+    </section>
+    <!--Facts Sectrion END-->
+    <!--Portfolio Section START-->
+    <section id="portfolio">
+        <div class="container">
+            <!--Section Heading START-->
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-5 fw-bold text-uppercase d-inline-block">生活展示</h2>
+            </div>
+            <!--Section Heading END-->
+            <!--Section Body START-->
+            <div class="section-body">
+                <!--Masonry Grid Container START-->
+                <div class="row gy-5 grid">
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+
+                        <a href="images/1.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/1.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">最帅男团</h3>
+                                <span class="d-block fw-light small-font-size">刘家峡</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!--Masonry Grid Item END-->
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+
+                        <a href="images/2.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/2.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">散步</h3>
+                                <span class="d-block fw-light small-font-size">黄河边</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!--Masonry Grid Item END-->
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+
+                        <a href="images/lanshan.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/lanshan.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">背影</h3>
+                                <span class="d-block fw-light small-font-size">兰山</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!--Masonry Grid Item END-->
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+
+                        <a href="images/4.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/4.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">模糊光晕</h3>
+                                <span class="d-block fw-light small-font-size">花海</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!--Masonry Grid Item END-->
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+                        
+                        <a href="images/5.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/5.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">虔诚</h3>
+                                <span class="d-block fw-light small-font-size">教室</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!--Masonry Grid Item END-->
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+
+                        <a href="images/6.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/6.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">侧脸</h3>
+                                <span class="d-block fw-light small-font-size">大钟下</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!--Masonry Grid Item END-->
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+
+                        <a href="images/7.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/7.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">打篮球</h3>
+                                <span class="d-block fw-light small-font-size">南村篮球场</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!--Masonry Grid Item END-->
+                    <!--Masonry Grid Item START-->
+                    <div class="col-md-6 col-lg-4 grid-item">
+
+                        <a href="images/8.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                            <div class="portfolio-thumbnail">
+                                <img src="images/8.jpg" class="img-fluid img-grayTransition" alt="">
+                            </div>
+                            <div class="portfolio-description my-3">
+                                <h3 class="fs-5 underline_text fw-bold d-inline-block">翱翔在空中</h3>
+                                <span class="d-block fw-light small-font-size">黄河三峡</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!--Masonry Grid Item END-->
+                </div>
+                <!--Masonry Grid Container END-->
+            </div>
+            <!--Section Body START-->
+        </div>
+    </section>
+    <!--Portfolio Section END-->
+    <!--Education Section START-->
+     <section id="vCard">
+         <div class="container">
+             <!--Section Heading START-->
+             <div class="heading text-center mb-5">
+                 <h2 class="fs-3 kayden-underline-left mb-5 fw-bold text-uppercase d-inline-block">获奖证书</h2>
+             </div>
+             <!--Section Heading END-->
+             <!--Section Body START-->
+             <div class="section-body">
+                 <!--Masonry Grid Container START-->
+                 <div class="row gy-5 grid">
+                     <!--Masonry Grid Item START-->
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/lizhi1.png" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/lizhi1.png" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">国家励志奖学金</h3>
+                                 <span class="d-block fw-light small-font-size">2019~2020</span>
+                             </div>
+                         </a>
+
+                     </div>
+
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/lanqiao1.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/lanqiao1.jpg" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">蓝桥杯</h3>
+                                 <span class="d-block fw-light small-font-size">省级一等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+                     <!--Masonry Grid Item END-->
+                     <!--Masonry Grid Item START-->
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/tiaozhan.png" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/tiaozhan.png" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">挑战杯</h3>
+                                 <span class="d-block fw-light small-font-size">省级一等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+                     <!--Masonry Grid Item END-->
+                     <!--Masonry Grid Item START-->
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/bochuang.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/bochuang.jpg" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">博创杯</h3>
+                                 <span class="d-block fw-light small-font-size">国家级二等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+                     <!--Masonry Grid Item END-->
+                     <!--Masonry Grid Item START-->
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/tianti.png" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/tianti.png" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">天梯赛</h3>
+                                 <span class="d-block fw-light small-font-size">省级一等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+
+
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/zhengda.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/zhengda.jpg" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">正大杯</h3>
+                                 <span class="d-block fw-light small-font-size">省级一等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/lanqiao2.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/lanqiao2.jpg" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">蓝桥杯</h3>
+                                 <span class="d-block fw-light small-font-size">省级二等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/sanwei.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/sanwei.jpg" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">三维数字化创新设计大赛</h3>
+                                 <span class="d-block fw-light small-font-size">省级二等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/lizhi2.png" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/lizhi2.png" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">国家励志奖学金</h3>
+                                 <span class="d-block fw-light small-font-size">2020~2021</span>
+                             </div>
+                         </a>
+
+                     </div>
+                     <!--Masonry Grid Item END-->
+                     <!--Masonry Grid Item START-->
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/sanhao.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/sanhao.jpg" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">三好学生标兵</h3>
+                                 <span class="d-block fw-light small-font-size">校级</span>
+                             </div>
+                         </a>
+                     </div>
+                     <!--Masonry Grid Item END-->
+                     <!--Masonry Grid Item START-->
+                     <div class="col-md-6 col-lg-4 grid-item">
+
+                         <a href="images/sheji.jpg" class="portfolio-item portfolio-image underline_animation text-reset">
+                             <div class="portfolio-thumbnail">
+                                 <img src="images/sheji.jpg" class="img-fluid img-grayTransition" alt="">
+                             </div>
+                             <div class="portfolio-description my-3">
+                                 <h3 class="fs-5 underline_text fw-bold d-inline-block">程序设计大赛</h3>
+                                 <span class="d-block fw-light small-font-size">省级二等奖</span>
+                             </div>
+                         </a>
+
+                     </div>
+                     <!--Masonry Grid Item END-->
+                     <!--Masonry Grid Item START-->
+
+                     <!--Masonry Grid Item END-->
+                     <!--Masonry Grid Item START-->
+
+                     <!--Masonry Grid Item END-->
+                 </div>
+                 <!--Masonry Grid Container END-->
+             </div>
+             <!--Section Body START-->
+         </div>
+     </section>
+    <section id="education">
+        <div class="container">
+            <!--Section Heading START-->
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-5 fw-bold text-uppercase d-inline-block">教育经历</h2>
+            </div>
+            <!--Section Heading END-->
+            <!--Section Body START-->
+            <div class="section-body">
+                <div class="table-responsive">
+                    <!--Educational Table START-->
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="d-table-cell d-sm-none">
+                                    <div class="mb-3 fw-light">2013-2016</div>
+                                    <div class="mb-3 fw-bold">浙江省 绍兴市 上虞区 实验中学</div>
+                                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里我遇到了我的一位Girlfriend，我被她的美丽所深深的吸引了</div>
+                                </td>
+                                <td class="w-25 d-none d-sm-table-cell">
+                                    <span class="fw-light fs-5">2013-2016</span>
+                                </td>
+                                <td class="w-50 d-none d-sm-table-cell">
+                                    <span class="fw-bold fs-5">浙江省 绍兴市 上虞区 实验中学</span>
+                                </td>
+                                <td class="w-25 d-none d-sm-table-cell">
+                                    <span class="fw-normal text-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里开启了我的启蒙教育，老师们孜孜不倦的教诲以及同学之间的互相帮助，让我受益匪浅</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="d-table-cell d-sm-none">
+                                    <div class="mb-3 fw-light">2016-2019</div>
+                                    <div class="mb-3 fw-bold">浙江省 绍兴市 上虞区 东关中学</div>
+                                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高中见证了我的汗水和努力，我在篮球场上挥洒这汗水，在教室中奋笔疾书，不断的向美好的未来前行</div>
+                                </td>
+                                <td class="w-25 d-none d-sm-table-cell">
+                                    <span class="fw-light fs-5">2016-2019</span>
+                                </td>
+                                <td class="w-50 d-none d-sm-table-cell">
+                                    <span class="fw-bold fs-5">浙江省 绍兴市 上虞区 东关中学</span>
+                                </td>
+                                <td class="w-25 d-none d-sm-table-cell">
+                                    <span class="fw-normal text-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高中见证了我的汗水和努力，我在篮球场上挥洒这汗水，在教室中奋笔疾书，不断的向美好的未来前行</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="d-table-cell d-sm-none border-0">
+                                    <div class="mb-3 fw-light">2019-2023</div>
+                                    <div class="mb-3 fw-bold">甘肃省 兰州市 兰州理工大学</div>
+                                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里我很高兴遇到了一些志同道合的朋友，我们一起吃饭，一起愉快的玩和学习</div>
+                                </td>
+                                <td class="w-25 d-none d-sm-table-cell border-0">
+                                    <span class="fw-light fs-5">2019-2023</span>
+                                </td>
+                                <td class="w-50 d-none d-sm-table-cell border-0">
+                                    <span class="fw-bold fs-5">甘肃省 兰州市 兰州理工大学</span>
+                                </td>
+                                <td class="w-25 d-none d-sm-table-cell border-0">
+                                    <span class="fw-normal text-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里我很高兴遇到了一些志同道合的朋友，我们一起吃饭，一起愉快的玩和学习</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!--Educational Table END-->
+                </div>
+            </div>
+            <!--Section Body END-->
+        </div>
+    </section>
+    <!--Education Section END-->
+    <!--Testimonials START-->
+    <section id="testimonials">
+        <div class="container">
+            <!--Section Heading START-->
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-5 fw-bold text-uppercase d-inline-block">朋友寄语</h2>
+            </div>
+            <!--Section Heading END-->
+            <!--Section Body START-->
+            <div class="section-body">
+                <div class="testimonials-header mb-5">
+                    <div class="row">
+                        <div class="col-10 offset-1">
+                            <div class="text-primary fs-1">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <!--OWL Slider START-->
+                    <div id="client_slider" class="owl-carousel owl-theme">
+                        <!--OWL Slider Item START-->
+                        <div class="offset-1 col-10">
+                            <div class="row">
+                                <div class="col-md-6 order-2 order-md-1">
+                                    <div class="testimonial_details">
+                                        <p class="text-secondary mb-3" style="text-indent: 2em">幸福是每天按时吃早餐，幸福是经常看到笑脸，幸福是冬天懒洋洋的晒太阳，幸福是有人关心，幸福是给牵挂的朋友送去祝福问候：天冷保重自己</p>
+                                        <span class="font-family-secondary fs-5 fw-light fst-italic">--李松添</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-1 order-md-2">
+                                    <div class="testimonial_thumbnail d-flex justify-content-start justify-content-md-end">
+                                        <img src="images/p1.jpg" class="kayden-shadow rounded-3 w-auto" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--OWL Slider Item END-->
+                        <!--OWL Slider Item START-->
+                        <div class="offset-1 col-10">
+                            <div class="row">
+                                <div class="col-md-6 order-2 order-md-1">
+                                    <div class="testimonial_details">
+                                        <p class="text-secondary mb-3" style="text-indent: 2em">烦恼都是浮云，让它随风飘了；希望就是麦田，把它早早浇了；开心好像炉火，把它旺旺烧了；甜蜜就像青春日记，把它悄悄抄了。祝愿你天天牙齿晒太阳。</p>
+                                        <span class="font-family-secondary fs-5 fw-light fst-italic">--陈刘雯</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-1 order-md-2">
+                                    <div class="testimonial_thumbnail d-flex justify-content-start justify-content-md-end">
+                                        <img src="images/p2.jpg" class="kayden-shadow rounded-3 w-auto" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--OWL Slider Item END-->
+                        <!--OWL Slider Item START-->
+                        <div class="offset-1 col-10">
+                            <div class="row">
+                                <div class="col-md-6 order-2 order-md-1">
+                                    <div class="testimonial_details">
+                                        <p class="text-secondary mb-3" style="text-indent: 2em">工作总是忙碌，道路总是坎坷，身心总是疲惫，忧愁总是太多。虽然常常忘记联系，但朋友情谊依然珍惜，时常注意休息，一定照顾好自己。</p>
+                                        <span class="font-family-secondary fs-5 fw-light fst-italic">--何荣坤</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-1 order-md-2">
+                                    <div class="testimonial_thumbnail d-flex justify-content-start justify-content-md-end">
+                                        <img src="images/p3.jpg" class="kayden-shadow rounded-3 w-auto" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--OWL Slider Item END-->
+                       
+                    </div>
+                    <!--OWL Slider END-->
+                </div>
+            </div>
+            <!--Section Body END-->
+        </div>
+
+    </section>
+    <!--Testimonials END-->
+    <!--FAQ START-->
+    <section id="faq">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                    <!--Section Heading START-->
+                    <div class="heading text-center mb-5">
+                        <h2 class="fs-3 kayden-underline-left mb-5 fw-bold text-uppercase d-inline-block">FAQ</h2>
+                    </div>
+                    <!--Section Heading END-->
+                    <!--Accordion START-->
+                    <div class="accordion" id="faq_accordion">
+                        <!--Accordion ITEM START-->
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion1" aria-expanded="true" aria-controls="accordion1">
+                                如何联系到我？
+                              </button>
+                            </h2>
+
+                            <div id="accordion1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faq_accordion">
+
+                              <div class="accordion-body text-secondary">
+                                有问题可以发送到我的邮箱&nbsp;gusmart@163.com
+                              </div>
+
+                            </div>
+
+                        </div>
+                        <!--Accordion ITEM END-->
+                        <!--Accordion ITEM START-->
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header" id="headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion2" aria-expanded="true" aria-controls="accordion2">
+                                网站会定期更新吗？
+                              </button>
+                            </h2>
+
+                            <div id="accordion2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faq_accordion">
+
+                              <div class="accordion-body text-secondary">
+                               只要XiaoGu有空闲的时间就会一直进行更新
+                              </div>
+
+                            </div>
+
+                        </div>
+                        <!--Accordion ITEM END-->
+                        <!--Accordion ITEM START-->
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header" id="heading3">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion3" aria-expanded="true" aria-controls="accordion3">
+                                XiaoGu是HTML小白吗？
+                              </button>
+                            </h2>
+
+                            <div id="accordion3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faq_accordion">
+
+                              <div class="accordion-body text-secondary">
+                                是的，我最近才刚开始进行网页的构建和设计
+                              </div>
+
+                            </div>
+
+                        </div>
+                        <!--Accordion ITEM END-->
+                        <!--Accordion ITEM START-->
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header" id="heading4">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion4" aria-expanded="true" aria-controls="accordion4">
+                                这些网页已经做的很完善了吗？
+                              </button>
+                            </h2>
+
+                            <div id="accordion4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faq_accordion">
+
+                              <div class="accordion-body text-secondary">
+                               在网页的交互上还是有些缺陷的，如果发现可以联系我
+                              </div>
+
+                            </div>
+
+                        </div>
+                        <!--Accordion ITEM END-->
+
+                    </div>
+                    <!--Accordion END-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FAQ END-->
+    <!--Contact Us START-->
+    <section id="contact">
+        <div class="container">
+            <!--Section Heading START-->
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-5 fw-bold text-uppercase d-inline-block">Contact Me</h2>
+            </div>
+            <!--Section Heading END-->
+            <!--Section Body START-->
+            <div class="section-body">
+                <div class="row gy-5">
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column justify-content-center h-100">
+                            <!--Contact Details START-->
+                            <div class="contact-details d-flex flex-row align-items-center mb-3">
+                                <div class="cd-icon fs-2 me-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="cd-info fs-5 font-family-secondary">
+                                    <a href="http://www.gmail.com/" class = text-white>
+                                    &nbsp;E-mail : gusmart@163.com
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Contact Details END-->
+                            <!--Contact Details START-->
+                            <div class="contact-details d-flex flex-row align-items-center mb-3">
+                                <div class="cd-icon fs-2 me-4">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="cd-info fs-5 font-family-secondary">
+                                    Zhe Jiang  China
+                                </div>
+                            </div>
+                            <!--Contact Details END-->
+                            <!--Contact Details START-->
+                            <div class="contact-details d-flex flex-row align-items-center">
+                                <div class="cd-icon fs-2 me-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="cd-info fs-5 font-family-secondary">
+                                    <a href="https://www.10086.cn/" class="text-white">
+                                        &nbsp;+86 13676860581
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Contact Details END-->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="mb-5 fs-4 text-center text-sm-left">让我们来一起愉快的交流吧</h3>
+                        <form action="php/form.php" method="post" id="contact-form">
+                            <div class="mb-4">
+                                <input type="text" name="name" id="name" placeholder="Full name" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <textarea placeholder="Message" name="text" id="text" class="form-control" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <div align="center"><button type="submit" id="contact-btn" class="btn btn-primary">发送</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Section Body END-->
+        </div>
+    </section>
+    <!--Contact Us END-->
+    <!--Footer START-->
+    <footer class="kayden-footer py-4">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                <!--Social Links START-->
+                <ul class="social-links list-inline mb-4">
+                    <li class="list-inline-item">
+                        <a href="https://facebook.com/" title="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.weixin.com/" title="linkedin">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://instagram.com/" title="pinterest">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com" title="git">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!--Social Links END-->
+                <!--Copyright START-->
+                <p class="text-center m-0">2022 ©. XiaoGu Template. Developed and Designed By <a href="http://www.bootstrapmb.com/">bootstrapmb</a></p>
+                <!--Copyright END-->
+            </div>
+        </div>
+    </footer>
+    <!--Footer END-->
+    <!--To TOP START-->
+    <a href="#" class="toTop d-inline" id="return-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <!--To TOP END-->
+    
+    <!--JavaScript START-->
+ 
+ 
+    <script src="js/bootstrap.min.js"></script>
+    <!--JQuery-->
+    <script src="js/jquery.min.js"></script>
+    <!--AOS Animations-->
+    <script src="js/aos.js"></script>
+    <!--Jquery Easing -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!--Jquery Appear -->
+    <script src="js/jquery.appear.min.js"></script>
+    <!--Kayden preloader -->
+    <script src="js/preloader.js"></script>
+    <!--Jquery Count To -->
+    <script src="js/jquery.countTo.js"></script>
+    <!--Masonry -->
+    <script src="js/masonry.pkgd.min.js"></script>
+    <!--Jquery Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!--OWL Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!--Typed JS -->
+    <script src="js/typed.min.js"></script>
+    <!--Kayden Alert -->
+    <script src="js/alert.js"></script>
+    <!--Kayden Contact US -->
+    <script src="js/contact.js"></script>
+    <!--Kayden Custom Script -->
+    <script src="js/kayden.js"></script>
+    <!--JavaScript END-->
+
+</body>
+</html>
